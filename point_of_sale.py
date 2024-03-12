@@ -41,45 +41,4 @@ class ServiceItem(SaleItem):
         total_cost = self.hourly_rate * hours
         return total_cost
 
-# Input sale details
-item_id = input("Enter the item ID: ")
-name = input("Enter the item name: ")
-unit_price = float(input("Enter the unit price: "))
-quantity = int(input("Enter the quantity: "))
-# Loop until the user chooses to exit
-# Determine the item type
-while True:
-    print("Choose the product type:")
-    print("1. standard")
-    print("2. discounted")
-    print("3. service")
-    print("4. Exit")
-    item_type = int(input("Enter your choice (1/2/3/4): "))
-
-    if item_type == 4:
-        print("Exiting the program.")
-        break
-
-# Create an instance of the corresponding item type
-if item_type == "1":
-    item = StandardItem(item_id, name, unit_price)
-    item.calculate_total()
-elif item_type == "2":
-    discount_percentage = float(input("Enter the discount percentage: "))
-    item = DiscountedItem(item_id, name, unit_price, discount_percentage)
-    item.calculate_total()
-elif item_type == "3":
-    hourly_rate = float(input("Enter the hourly rate: "))
-    item = ServiceItem(item_id, name, hourly_rate)
-    item.calculate_total()
-else:
-    print("Invalid item type.")
-# Calculate and print total cost
-if isinstance(item, ServiceItem):
-    hours = int(input("Enter the number of hours: "))
-    total_cost = item.calculate_total(hours)
-else:
-    total_cost = item.calculate_total(quantity)
-    
-print("Total cost:", total_cost)
-
+https://github.com/Beverline-9296/pythonprogram.git
